@@ -1,0 +1,165 @@
+.main {
+  position: relative;
+}
+
+.main::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: rgba(0,0,0,0.08);
+}
+
+.mainContainer {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.mainTextWrapperOne {
+  display: flex;
+  align-items: center;
+}
+
+.mainTextWrapperTwo {
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .mainTextWrapperTwo {
+    justify-content: center;
+  }
+}
+
+.mainTexts {
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: var(--black);
+}
+
+.mainButtonWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .mainButtonWrapper {
+    flex-direction: row;
+    gap: 0.5rem;
+    justify-content: end;
+  }
+}
+
+.mainButton {
+  display: inline-block;
+  position: relative;
+
+  padding: 1rem;
+  margin-top: 0.4rem;
+
+  background-color: var(--black);
+  color: var(--white);
+
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  border-radius: clamp(4rem, 4rem + ((1vw - 7.77rem) * 3.2258), 4.8rem);
+
+  text-decoration: none;
+
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+
+  transition: background-color 0.3s ease;
+}
+
+.mainButton:hover {
+  cursor: pointer;
+}
+
+.ctaButton {
+  overflow: hidden;
+  animation:
+    ctaPulse 1s ease-in-out infinite,
+    ctaGlow 1s ease-in-out infinite;
+}
+
+.ctaButton::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 120%;
+  height: 100%;
+
+  border-radius: inherit;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.25),
+    transparent
+  );
+
+  transform: translateX(-120%);
+  animation: ctaSweep 1.5s infinite;
+}
+
+/* ===== Animations ===== */
+
+@keyframes ctaPulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.04);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes ctaGlow {
+  0% {
+    box-shadow:
+      0 6px 18px rgba(0,0,0,0.18),
+      0 0 0 rgba(0,0,0,0);
+  }
+
+  50% {
+    box-shadow:
+      0 8px 24px rgba(0,0,0,0.22),
+      0 0 12px rgba(0,0,0,0.12);
+  }
+
+  100% {
+    box-shadow:
+      0 6px 18px rgba(0,0,0,0.18),
+      0 0 0 rgba(0,0,0,0);
+  }
+}
+
+@keyframes ctaSweep {
+  0% {
+    transform: translateX(-120%);
+  }
+
+  60% {
+    transform: translateX(120%);
+  }
+
+  100% {
+    transform: translateX(120%);
+  }
+}

@@ -1,0 +1,72 @@
+.container {
+  padding: 1rem;
+}
+
+.title {
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: bold;
+  color: var(--black);
+  margin: 0 0 1rem 0;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.3rem;
+}
+
+.cell {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: var(--white);
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Text cells */
+.textCell {
+  background: var(--white);
+  display: flex;
+  align-items: start;
+}
+
+.tagline {
+  font-size: 1rem;
+  font-weight: normal;
+  color: var(--black);
+  text-align: left;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Force last text cell to bottom right on desktop */
+.lastCell {
+  grid-column: auto;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.lastCell .tagline {
+  text-align: right;
+}
+
+/* Desktop — 4 columns */
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .lastCell {
+    grid-column: 4;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+}

@@ -1,0 +1,94 @@
+:root {
+  --font-heading: "Romanesco", serif;
+  --font-body: "Source Code Pro", monospace;
+  --black: #000;
+  --white: #fff;
+  --gray: hsl(0, 0%, 45%);
+  --gray-light: #2a2a2a;
+  --accent: #f5f5f5;
+  --orange: #ff622b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  letter-spacing: 0 !important;
+}
+
+html,
+body {
+  background-color: var(--white);
+  color: var(--gray);
+  font-family: var(--font-body);  
+  padding: 0;
+  margin: 0;
+}
+
+::selection {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--white);
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-80px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(100vh);
+  }
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+*:focus {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: none;
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none;
+}
+
+button {
+  -webkit-appearance: none;
+  appearance: none;
+  color: inherit;
+  background: none;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+}

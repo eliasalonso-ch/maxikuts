@@ -1,0 +1,303 @@
+.main {
+  min-height: 100vh;
+  background-color: var(--white);
+  color: var(--black);
+  position: relative;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+/* ---- Background texture ---- */
+.bgTexture {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bgGrain {
+  position: fixed;
+  inset: 0;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ---- Decorative scissors ---- */
+.scissorsLeft,
+.scissorsRight {
+  position: fixed;
+  font-size: 7rem;
+  opacity: 0.04;
+  color: var(--black);
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+}
+.scissorsLeft  { top: 10%; left: -1rem; transform: rotate(-30deg); }
+.scissorsRight { bottom: 10%; right: -1rem; transform: rotate(150deg); }
+
+/* ---- Layout container ---- */
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+/* ---- Header ---- */
+.header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logoMark {
+  width: 56px;
+  height: 56px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 3s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0,0,0,0.08); }
+  50%       { box-shadow: 0 0 0 10px rgba(0,0,0,0); }
+}
+.logoIcon {
+  color: var(--black);
+  font-size: 1.4rem;
+}
+
+.tagline {
+  font-size: 0.7rem;
+  color: var(--gray);
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: clamp(2.8rem, 7vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--black);
+}
+.title em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--black);
+  opacity: 0.5;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 200px;
+}
+.divider span:first-child,
+.divider span:last-child {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(0,0,0,0.15), transparent);
+}
+.diamond {
+  color: var(--black);
+  font-size: 0.4rem;
+  opacity: 0.3;
+}
+
+.subtitle {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--gray);
+  max-width: 420px;
+  line-height: 1.8;
+}
+
+/* ---- Card ---- */
+.card {
+  width: 100%;
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 16px;
+  padding: 2.5rem 2.5rem 2rem;
+}
+
+/* ---- Form ---- */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.labelNumber {
+  font-size: 0.6rem;
+  color: var(--gray);
+  font-weight: 400;
+}
+
+.input,
+.textarea {
+  background: #fafafa;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 10px;
+  color: var(--black);
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 0.75rem 1rem;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+  width: 100%;
+}
+.input::placeholder,
+.textarea::placeholder {
+  color: rgba(0,0,0,0.25);
+  font-style: italic;
+}
+.input:focus,
+.textarea:focus {
+  border-color: rgba(0,0,0,0.35);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.04);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 130px;
+  line-height: 1.6;
+}
+
+/* ---- Button ---- */
+.btn {
+  align-self: flex-start;
+  background: var(--black);
+  color: var(--white);
+  border: 1px solid var(--black);
+  border-radius: 10px;
+  padding: 0.85rem 2.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+}
+.btn:hover:not(:disabled) {
+  background: var(--white);
+  color: var(--black);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+.btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btnInner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+.btnArrow {
+  font-size: 1rem;
+  transition: transform 0.2s;
+}
+.btn:hover .btnArrow { transform: translateX(4px); }
+
+.spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: var(--white);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ---- Feedback ---- */
+.feedback {
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 0.85rem 1.1rem;
+  border-radius: 8px;
+  animation: fadeIn 0.3s ease;
+}
+@keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+.feedbackSuccess {
+  background: rgba(0,0,0,0.04);
+  border: 1px solid rgba(0,0,0,0.08);
+  color: var(--black);
+}
+.feedbackError {
+  background: rgba(200,60,60,0.06);
+  border: 1px solid rgba(200,60,60,0.2);
+  color: #c0392b;
+}
+
+/* ---- Footer info ---- */
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem 1.5rem;
+  font-size: 0.85rem;
+  color: var(--gray);
+  font-weight: 300;
+}
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.infoIcon { font-size: 0.8rem; }
+.infoSep {
+  color: rgba(0,0,0,0.15);
+  font-size: 0.4rem;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 560px) {
+  .row { grid-template-columns: 1fr; }
+  .card { padding: 1.75rem 1.25rem; }
+  .btn { align-self: stretch; justify-content: center; }
+  .footer { flex-direction: column; gap: 0.5rem; }
+  .infoSep { display: none; }
+}

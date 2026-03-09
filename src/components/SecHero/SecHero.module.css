@@ -1,0 +1,106 @@
+.secHeroContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+/* IMAGE */
+
+.secHeroImage {
+  display: flex;
+  justify-content: center;
+  overflow: hidden; /* clips the parallax travel */
+}
+
+.chairWrap {
+  will-change: transform;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.chairImg {
+  width: 100%;
+  max-width: 600px;
+  min-height: 350px;
+  height: auto;
+  display: block;
+}
+
+/* TITLE */
+
+.secHeroTitle {
+  color: var(--black);
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: right;
+}
+
+/* TEXT */
+
+.secHeroText {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+.secHeroParagraph {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #555;
+  text-align: right;
+}
+
+/* DESKTOP */
+
+@media (min-width: 1024px) {
+
+  .secHeroContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 10rem;
+
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    align-items: center;
+  }
+
+  /* IMAGE */
+
+  .secHeroImage {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    justify-content: flex-start;
+  }
+
+  .chairImg {
+    width: 130%;
+    max-width: none;
+  }
+
+  /* TITLE */
+
+  .secHeroTitle {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: left;
+    font-size: clamp(2.8rem, 3.5vw, 4.5rem);
+  }
+
+  /* TEXT */
+
+  .secHeroText {
+    grid-column: 2;
+    grid-row: 2;
+    justify-content: flex-start;
+  }
+
+  .secHeroParagraph {
+    text-align: left;
+    max-width: 480px;
+  }
+}

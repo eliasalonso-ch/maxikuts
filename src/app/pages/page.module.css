@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--black);
+  margin-bottom: 2.5rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.heading {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--black);
+}
+
+.section p {
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: #444;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding-left: 1.25rem;
+}
+
+.list li {
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: #444;
+}

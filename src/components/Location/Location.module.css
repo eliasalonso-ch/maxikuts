@@ -1,0 +1,147 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 1.5rem;
+  background-color: var(--black);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative top line */
+.topLine {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #444, transparent);
+  margin-bottom: 2rem;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.inner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: slideUp 0.7s ease both;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  letter-spacing: 0.04em;
+}
+
+.grid {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.block {
+  animation: slideUp 0.7s ease both;
+}
+
+.block:nth-child(1) { animation-delay: 0.1s; }
+.block:nth-child(2) { animation-delay: 0.2s; }
+.block:nth-child(3) { animation-delay: 0.3s; }
+
+.label {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #666;
+  margin-bottom: 0.75rem;
+}
+
+.text {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--white);
+}
+
+/* MAP */
+
+.mapBlock {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.map {
+  width: 100%;
+  height: 300px;
+  border: none;
+}
+
+.map:hover {
+  opacity: 1;
+}
+
+/* Bottom accent row */
+.bottomAccent {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 2rem;
+  animation: fadeIn 1s ease 0.5s both;
+}
+
+.accentLine {
+  flex: 1;
+  height: 1px;
+  background: #333;
+}
+
+.accentTag {
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  color: #555;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .container {
+    padding: 4rem 5rem;
+  }
+
+  .title {
+    font-size: 4.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr 1.5fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .mapBlock {
+    grid-column: 4;
+  }
+
+  .map {
+    height: 300px;
+  }
+}

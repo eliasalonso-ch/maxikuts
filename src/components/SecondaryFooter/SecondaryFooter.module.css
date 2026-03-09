@@ -1,0 +1,192 @@
+.secondaryFooter {
+  background-color: var(--white);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Wider container */
+.secondaryFooterContainer {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 4rem 2rem 2rem;
+}
+
+/* TOP SECTION */
+
+.top {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.brandName {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--black);
+  margin: 0;
+}
+
+.tagline {
+  font-size: 0.9rem;
+  color: var(--gray);
+  margin: 0;
+}
+
+/* CTA */
+
+.cta {
+  display: flex;
+}
+
+.ctaButton {
+  display: inline-block;
+  text-align: center;
+  justify-content: start;
+  align-self: center;
+  padding: 1rem;
+  height: fit-content;
+  width: fit-content;
+  white-space: nowrap;
+  vertical-align: middle;
+  position: relative;
+  font-style: inherit;
+  margin-top: 0.4rem;
+  background-color: var(--black);
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: clamp(4rem, 4rem + ((1vw - 7.77rem) * 3.2258), 4.8rem);
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.ctaButton:hover {
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+.ctaButton:hover::after {
+  left: 160%;
+}
+
+/* SOCIAL */
+
+.social {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: var(--black);
+}
+
+.socialLabel {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--gray);
+}
+
+.socialLink svg {
+  font-size: 1.2rem;
+}
+
+.socialLink:hover {
+  opacity: 0.6;
+}
+
+/* DIVIDER */
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(0,0,0,0.06);
+  margin-bottom: 2rem;
+}
+
+/* BOTTOM */
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.secondaryFooterUl {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.secondaryFooterA {
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: var(--gray);
+  transition: color 0.15s ease;
+}
+
+.secondaryFooterA:hover {
+  color: var(--black);
+}
+
+.copyright {
+  font-size: 0.8rem;
+  color: var(--gray);
+  margin: 0;
+}
+
+.copyright a {
+  text-decoration: none;
+  color: var(--gray);
+}
+
+/* DESKTOP */
+
+@media (min-width: 900px) {
+
+  .top {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+  }
+
+  .brandName {
+    font-size: 5rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
+
+  .ctaButton {
+    font-size: 1rem;
+  }
+
+  .bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .secondaryFooterUl {
+    display: flex;
+    gap: 2rem;
+  }
+}

@@ -16,7 +16,7 @@ export default function SecondaryFooter() {
           </div>
 
           <div className={styles.cta}>
-            <Link href="/pages/booking" className={styles.ctaButton}>
+            <Link href="/booking" className={styles.ctaButton}>
               Reservar hora →
             </Link>
           </div>
@@ -41,7 +41,7 @@ export default function SecondaryFooter() {
         <div className={styles.bottom}>
           <ul className={styles.secondaryFooterUl}>
             <li>
-              <a className={styles.secondaryFooterA} href="/pages/contact">Contacto</a>
+              <a className={styles.secondaryFooterA} href="/contact">Contacto</a>
             </li>
             <li>
               <a className={styles.secondaryFooterA} href="/pages/privacy-policy">Política de Privacidad</a>
@@ -55,7 +55,14 @@ export default function SecondaryFooter() {
           </ul>
 
           <p className={styles.copyright}>
-            © 2026 <a href="/">Maxikuts.</a>
+            © 2026 <a href="/">Maxikuts</a> · Desarrollado por{" "}
+            <a
+              href="https://github.com/eliasalonso-ch"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Elías Alonso
+            </a>
           </p>
         </div>
 

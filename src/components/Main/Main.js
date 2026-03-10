@@ -16,17 +16,18 @@ export default function Main() {
           </p>
         </div>
         <div className={style.mainButtonWrapper}>
-          <Link className={`${style.mainButton} ${style.ctaButton}`} href="/pages/booking">
-  agendar
-</Link>
-          <a
-  className={style.mainButton}
-  href="https://www.instagram.com/maxikuts/"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  lookbook
-</a>
+          <Link
+            className={`${style.mainButton} ${style.ctaButton}`}
+            href="/pages/booking"
+          >
+            agendar
+          </Link>
+          <Link
+            className={style.mainButton}
+            href="/pages/lookbook"
+          >
+            lookbook
+          </Link>
         </div>
       </div>
     </main>

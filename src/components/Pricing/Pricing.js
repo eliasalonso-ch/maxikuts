@@ -39,7 +39,6 @@ export default function Pricing({ cards = [] }) {
               key={card.name}
               className={styles.card}
               ref={(el) => (cardsRef.current[i] = el)}
-              style={{ transitionDelay: `${i * 0.08}s` }}
             >
               <div className={styles.cardTop}>
                 <h3 className={styles.cardName}>{card.name}</h3>

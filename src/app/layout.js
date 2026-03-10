@@ -23,6 +23,7 @@ const sourceCodePro = Source_Code_Pro({
 export const metadata = {
   title: "Maxikuts — Barberia y Peluquería",
   description: "Premium cuts and grooming in style.",
+  authors: [{ name: "Elías Alonso", url: "https://github.com/eliasalonso-ch" }],
 };
 
 export default async function RootLayout({ children }) {

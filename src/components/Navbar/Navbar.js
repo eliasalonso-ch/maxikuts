@@ -44,7 +44,7 @@ export default function Navbar() {
 
         {/* RIGHT */}
         {!open && (
-          <Link href="/booking" className={styles.rightLink}>
+          <Link href="/pages/booking" className={styles.rightLink}>
             agendar
           </Link>
         )}

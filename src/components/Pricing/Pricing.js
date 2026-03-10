@@ -31,7 +31,7 @@ export default function Pricing({ cards = [] }) {
       <div className={styles.topLine} />
 
       <div className={styles.inner}>
-        <h2 className={styles.title}>PRECIOS/SERVICIOS</h2>
+        <h2 className={styles.title}>SERVICIOS</h2>
 
         <div className={styles.grid}>
           {cards.map((card, i) => (

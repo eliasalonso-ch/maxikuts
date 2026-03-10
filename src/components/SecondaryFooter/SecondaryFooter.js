@@ -16,7 +16,7 @@ export default function SecondaryFooter() {
           </div>
 
           <div className={styles.cta}>
-            <Link href="/booking" className={styles.ctaButton}>
+            <Link href="/pages/booking" className={styles.ctaButton}>
               Reservar hora →
             </Link>
           </div>

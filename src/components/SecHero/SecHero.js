@@ -18,7 +18,7 @@ export default function SecHero() {
       const viewportHeight = window.innerHeight;
 
       const progress = (viewportHeight - rect.top) / (viewportHeight + rect.height);
-      const offset = (progress - 0.5) * 150; 
+      const offset = (progress - 0.5) * 150;
 
       image.style.transform = `translateY(${offset}px)`;
     };
@@ -39,6 +39,7 @@ export default function SecHero() {
             width={1080}
             height={729}
             priority
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>
       </div>

@@ -17,12 +17,11 @@ export default function Hero() {
       const rect = section.getBoundingClientRect();
       const sectionHeight = section.offsetHeight;
 
-      // progress: 0 at top of viewport, 1 when section fully scrolled out
       const scrolled = -rect.top;
       const progress = Math.max(0, Math.min(1, scrolled / sectionHeight));
 
-      const translateX = progress * 40; // vw units via percentage
-      const opacity = 1 - progress * 2.5; // fade out faster
+      const translateX = progress * 40;
+      const opacity = 1 - progress * 2.5;
 
       if (leftRef.current) {
         leftRef.current.style.transform = `translateX(-${translateX}vw)`;
@@ -45,12 +44,12 @@ export default function Hero() {
         alt="Barbershop"
         fill
         priority
-        quality={100}
+        quality={75}
+        sizes="100vw"
         className={styles.heroImage}
       />
       <div className={styles.overlay} />
 
-      {/* Scroll-animated big text */}
       <div className={styles.bigTextWrap}>
         <span ref={leftRef} className={`${styles.bigText} ${styles.bigTextLeft}`}>
           MAXIKUTS

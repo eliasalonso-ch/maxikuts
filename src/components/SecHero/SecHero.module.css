@@ -11,7 +11,7 @@
 .secHeroImage {
   display: flex;
   justify-content: center;
-  overflow: hidden; /* clips the parallax travel */
+  overflow: hidden;
 }
 
 .chairWrap {
@@ -24,7 +24,6 @@
 .chairImg {
   width: 100%;
   max-width: 600px;
-  min-height: 350px;
   height: auto;
   display: block;
 }

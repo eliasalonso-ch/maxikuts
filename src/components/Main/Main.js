@@ -18,13 +18,13 @@ export default function Main() {
         <div className={style.mainButtonWrapper}>
           <Link
             className={`${style.mainButton} ${style.ctaButton}`}
-            href="/pages/booking"
+            href="/booking"
           >
             agendar
           </Link>
           <Link
             className={style.mainButton}
-            href="/pages/lookbook"
+            href="/lookbook"
           >
             lookbook
           </Link>

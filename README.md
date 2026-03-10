@@ -10,7 +10,7 @@
 
 | Layer | Technology |
 |---|---|
-| Framework | [Next.js 15](https://nextjs.org/) (App Router) |
+| Framework | [Next.js 16](https://nextjs.org/) (App Router) |
 | CMS | [Sanity](https://www.sanity.io/) |
 | Booking | [Cal.com](https://cal.com/) |
 | Email | [Resend](https://resend.com/) |
@@ -54,7 +54,7 @@ src/
 
 ### Prerequisites
 
-- Node.js 18+
+- Node.js 24+
 - A [Cal.com](https://cal.com/) account with an event type configured
 - A [Resend](https://resend.com/) account
 - A [Sanity](https://www.sanity.io/) account

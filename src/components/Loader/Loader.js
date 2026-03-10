@@ -11,7 +11,6 @@ export default function Loader() {
   const [gone, setGone] = useState(false);
 
   useEffect(() => {
-    // Already shown this session — skip
     if (sessionStorage.getItem("loaderShown")) {
       setGone(true);
       return;
@@ -31,13 +30,13 @@ export default function Loader() {
       if (done) return;
       done = true;
       clearInterval(crawl);
-      sessionStorage.setItem("loaderShown", "true"); // mark as shown
+      sessionStorage.setItem("loaderShown", "true"); 
       setProgress(100);
       setTimeout(() => setLeaving(true), 350);
       setTimeout(() => setGone(true), 1200);
     };
 
-    const minDisplay = new Promise((resolve) => setTimeout(resolve, 1500));
+    const minDisplay = new Promise((resolve) => setTimeout(resolve, 1000));
     const windowLoad = new Promise((resolve) => {
       if (document.readyState === "complete") resolve();
       else window.addEventListener("load", resolve, { once: true });

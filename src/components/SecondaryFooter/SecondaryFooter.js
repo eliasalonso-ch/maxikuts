@@ -44,13 +44,13 @@ export default function SecondaryFooter() {
               <a className={styles.secondaryFooterA} href="/contact">Contacto</a>
             </li>
             <li>
-              <a className={styles.secondaryFooterA} href="/pages/privacy-policy">Política de Privacidad</a>
+              <a className={styles.secondaryFooterA} href="/privacy-policy">Política de Privacidad</a>
             </li>
             <li>
-              <a className={styles.secondaryFooterA} href="/pages/terms-of-service">Términos de Servicio</a>
+              <a className={styles.secondaryFooterA} href="/terms-of-service">Términos de Servicio</a>
             </li>
             <li>
-              <a className={styles.secondaryFooterA} href="/pages/about-us">Sobre Nosotros</a>
+              <a className={styles.secondaryFooterA} href="/about-us">Sobre Nosotros</a>
             </li>
           </ul>
 

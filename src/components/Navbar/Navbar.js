@@ -44,7 +44,7 @@ export default function Navbar() {
 
         {/* RIGHT */}
         {!open && (
-          <Link href="/pages/booking" className={styles.rightLink}>
+          <Link href="/booking" className={styles.rightLink}>
             agendar
           </Link>
         )}
@@ -78,10 +78,10 @@ export default function Navbar() {
           {/* LINKS */}
           <div className={styles.dropdownLinks}>
             {[
-              { name: "Lookbook", href: "/pages/lookbook" },
-              { name: "Agendar Cita", href: "/pages/booking" },
-              { name: "Sobre Mí", href: "/pages/about-us" },
-              { name: "Contacto", href: "/pages/contact" },
+              { name: "Lookbook", href: "/lookbook" },
+              { name: "Agendar Cita", href: "/booking" },
+              { name: "Sobre Mí", href: "/about-us" },
+              { name: "Contacto", href: "/contact" },
             ].map((item) => (
               <Link
                 key={item.name}

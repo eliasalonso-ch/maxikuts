@@ -1,4 +1,4 @@
-import styles from "@/app/pages/page.module.css";
+import styles from "@/app/page.module.css";
 
 export const metadata = {
   title: "Política de Privacidad — MAXIKUTS",

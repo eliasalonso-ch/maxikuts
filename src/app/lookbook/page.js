@@ -1,4 +1,4 @@
-import styles from "@/app/pages/lookbook.module.css";
+import styles from "@/app/lookbook.module.css";
 import { getLookbook } from "@/sanity/lib/queries";
 import Image from "next/image";
 

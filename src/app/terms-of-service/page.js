@@ -1,4 +1,4 @@
-import styles from "@/app/pages/page.module.css";
+import styles from "@/app/page.module.css";
 
 export const metadata = {
   title: "Términos de Servicio — MAXIKUTS",
@@ -69,7 +69,7 @@ export default function TermsOfService() {
 
         <section className={styles.section}>
           <h2 className={styles.heading}>9. Protección de Datos Personales</h2>
-          <p>El tratamiento de los datos personales recopilados a través de este sitio se rige por nuestra Política de Privacidad, disponible en tudominio.cl/pages/privacy-policy, conforme a la Ley N.° 19.628 sobre Protección de la Vida Privada.</p>
+          <p>El tratamiento de los datos personales recopilados a través de este sitio se rige por nuestra Política de Privacidad, disponible en tudominio.cl/privacy-policy, conforme a la Ley N.° 19.628 sobre Protección de la Vida Privada.</p>
         </section>
 
         <section className={styles.section}>

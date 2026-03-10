@@ -11,7 +11,7 @@ const faqs = [
   {
     question: "¿Dónde puedo hacer mi reserva?",
     answer: "Contamos con una plataforma personalizada donde puedes ver las fechas disponibles, seleccionar un horario y confirmar tu reserva. Una vez confirmada, recibirás una notificación por email. Puedes reservar tu hora en:",
-    link: { label: "Ir a reservas →", href: "/pages/booking" },
+    link: { label: "Ir a reservas →", href: "/booking" },
   },
   {
     question: "¿Puedo cancelar o reagendar mi hora?",

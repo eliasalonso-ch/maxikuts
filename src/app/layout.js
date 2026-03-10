@@ -1,6 +1,7 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
+import Loader from "@/components/Loader/Loader";
 import { Romanesco, Source_Code_Pro } from "next/font/google";
 import { headers } from "next/headers";
 
@@ -35,6 +36,7 @@ export default async function RootLayout({ children }) {
       lang="en"
     >
       <body>
+        {!isStudio && <Loader />}
         {!isStudio && <Navbar />}
         {children}
         {!isStudio && <Footer />}

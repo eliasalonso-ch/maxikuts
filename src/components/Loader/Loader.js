@@ -14,42 +14,35 @@ export default function Loader() {
     let currentProgress = 0;
     let done = false;
 
-    // Fake progress that crawls to 90% while waiting for real load
     const crawl = setInterval(() => {
       if (done) return;
-      // Slow down as it approaches 90 — never reaches 100 on its own
       const increment = Math.max(1, (90 - currentProgress) * 0.08);
       currentProgress = Math.min(90, currentProgress + increment);
       setProgress(Math.floor(currentProgress));
     }, 100);
 
-    // Real event — fires when ALL resources (images, fonts, iframes) are loaded
     const finish = () => {
       if (done) return;
       done = true;
       clearInterval(crawl);
-
-      // Jump to 100%
       setProgress(100);
-
-      // Exit after bar visually completes
       setTimeout(() => setLeaving(true), 350);
       setTimeout(() => setGone(true), 1200);
     };
 
-    if (document.readyState === "complete") {
-      // Already loaded (e.g. fast cache hit)
-      finish();
-    } else {
-      window.addEventListener("load", finish);
-    }
+    // Both must resolve before finishing
+    const minDisplay = new Promise((resolve) => setTimeout(resolve, 1500));
+    const windowLoad = new Promise((resolve) => {
+      if (document.readyState === "complete") resolve();
+      else window.addEventListener("load", resolve, { once: true });
+    });
 
-    // Safety fallback — never hang forever
+    Promise.all([minDisplay, windowLoad]).then(finish);
+
     const fallback = setTimeout(finish, 6000);
 
     return () => {
       clearInterval(crawl);
-      window.removeEventListener("load", finish);
       clearTimeout(fallback);
     };
   }, []);
@@ -62,7 +55,9 @@ export default function Loader() {
       <div className={styles.inner}>
         <div className={styles.nameWrap}>
           {LETTERS.map((letter, i) => (
-            <span key={i} className={styles.letter}>{letter}</span>
+            <span key={i} className={styles.letter}>
+              {letter}
+            </span>
           ))}
         </div>
 

@@ -16,7 +16,7 @@ export default function Main() {
           </p>
         </div>
         <div className={style.mainButtonWrapper}>
-          <Link className={`${style.mainButton} ${style.ctaButton}`} href="/booking">
+          <Link className={`${style.mainButton} ${style.ctaButton}`} href="/pages/booking">
   agendar
 </Link>
           <a
